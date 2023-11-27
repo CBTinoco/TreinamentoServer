@@ -30,7 +30,7 @@ app.get('/somaDias/:tipo/:quantidadeDias', (req, res) => {
       }
     }
 
-    resultado = dataAtual.toISOString().split('T')[0];
+    resultado = dataAtual.toISOString().split('T')[0].split('-').reverse().join('/');
   }else if (tipo === 'corridos'){
     resultado = somarDiasCorridos(dataAtual, parseInt(quantidadeDias));
   } else {
@@ -46,7 +46,7 @@ function somarDiasCorridos(dataAtual, quantidadeDias) {
   const milissegundosAdicionados = quantidadeDias * milissegundosPorDia;
   const novaData = new Date(data.getTime() + milissegundosAdicionados);
 
-  return novaData.toISOString().split('T')[0];
+  return novaData.toISOString().split('T')[0].split('-').reverse().join('/');
 }
 
 app.listen(PORT, () => {
