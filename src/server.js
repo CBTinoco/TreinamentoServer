@@ -15,7 +15,11 @@ app.get('/somaDias/:tipo/:quantidadeDias', (req, res) => {
   const dataAtual = new Date();
   let resultado;
 
+<<<<<<< HEAD
   if (tipo === 'uteis') {
+=======
+  if (tipo === 'úteis') {
+>>>>>>> 17813213fec767d118ec0c8fe5b3b1742adbb5bd
     let diasParaSomar = parseInt(quantidadeDias, 10);
 
     if (isNaN(diasParaSomar) || diasParaSomar <= 0) {
